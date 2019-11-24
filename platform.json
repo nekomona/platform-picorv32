@@ -1,0 +1,81 @@
+{
+    "name": "picorv32",
+    "title": "PicoRV32",
+    "version": "1.1.0",
+    "keywords": "risc-v, picorv32, arduino",
+    "description": "PicoRV32 is an opensource soft core CPU optimized for FPGA integration",
+    "url": "",
+    "homepage": "",
+    "license": "Apache-2.0",
+    "engines": {
+        "platformio": "<5"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/nekomona/platform-picorv32.git"
+    },
+    "authors": [{
+        "name": "nekomona",
+        "email": "",
+        "url": ""
+    }],
+    "packageRepositories": [
+        "https://dl.bintray.com/platformio/dl-packages/manifest.json",
+        "http://dl.platformio.org/packages/manifest.json",
+        {
+            "toolchain-rv32i": [
+                {
+                    "url": "file://D:/piobase/toolchain-rv32i-windows_x86-8.2.0.tar.gz",
+                    "version": "8.2.0",
+                    "system": [
+                        "windows_amd64",
+                        "windows_i386"
+                    ]
+                }
+            ],
+            "framework-arduino-picorv32": [
+                {
+                    "url": "file://D:/piobase/framework-arduino-picorv32",
+                    "version": "0.0.1",
+                    "system": [
+                        "windows_amd64",
+                        "windows_i386"
+                    ]
+                }
+            ],
+            "tool-pico-serialisp": [
+                {
+                    "url": "file://D:/piobase/tool-pico-serialisp",
+                    "version": "0.0.1",
+                    "system": [
+                        "windows_amd64",
+                        "windows_i386"
+                    ]
+                }
+            ]
+        }
+    ],
+    "frameworks": {
+        "arduino": {
+            "package": "framework-arduino-picorv32",
+            "script": "builder/frameworks/arduino.py"
+        }
+    },
+    "packages": {
+        "framework-arduino-picorv32": {
+            "optional":true,
+            "type": "framework",
+            "version": "~0.0.1"
+        },
+        "tool-pico-serialisp": {
+            "type": "uploader",
+            "optional": true,
+            "version": "~0.0.1"
+        },
+        "toolchain-rv32i": {
+            "type": "toolchain",
+            "version": "~8.2.0"
+        }
+    }
+
+}

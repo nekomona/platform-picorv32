@@ -1,0 +1,29 @@
+{
+    "build": {
+        "f_cpu": "24000000L",
+        "hwids": [
+            [
+                "0x28e9",
+                "0x058f"
+            ]
+        ],
+        "ldscript": "sections.lds",
+        "mabi": "ilp32",
+        "march": "rv32i",
+        "mcu": "PicoRV32-Small",
+        "variant": "picorv32-rv32i",
+        "board_def": "PICORV32-RV32I",
+        "hxtal_value": "24000000"
+    },
+    "frameworks": [
+        "arduino"
+    ],
+    "name": "PicoRV32 RV32I",
+    "upload": {
+        "maximum_ram_size": 4096,
+        "maximum_size": 2097152,
+        "protocol": "serial"
+    },
+    "url": "https://www.sipeed.com/",
+    "vendor": "Sipeed"
+}
