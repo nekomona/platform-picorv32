@@ -25,7 +25,7 @@
         {
             "toolchain-rv32i": [
                 {
-                    "url": "https://github.com/nekomona/toolchain-rv32i-windows_x86.git",
+                    "url": "git+https://github.com/nekomona/toolchain-rv32i-windows_x86.git",
                     "version": "8.2.0",
                     "system": [
                         "windows_amd64",
@@ -35,7 +35,7 @@
             ],
             "framework-arduino-picorv32": [
                 {
-                    "url": "https://github.com/nekomona/framework-arduino-picorv32.git",
+                    "url": "git+https://github.com/nekomona/framework-arduino-picorv32.git",
                     "version": "0.0.1",
                     "system": [
                         "windows_amd64",
@@ -45,7 +45,7 @@
             ],
             "tool-pico-serialisp": [
                 {
-                    "url": "https://github.com/nekomona/tool-pico-serialisp.git",
+                    "url": "git+https://github.com/nekomona/tool-pico-serialisp.git",
                     "version": "0.0.1",
                     "system": [
                         "windows_amd64",
