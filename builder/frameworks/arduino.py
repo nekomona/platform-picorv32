@@ -68,7 +68,7 @@ envsafe = env.Clone()
 
 libs.append(envsafe.BuildLibrary(
     join("$BUILD_DIR", "FrameworkArduino"),
-    join(FRAMEWORK_DIR, "cores", "arduino")
+    join(FRAMEWORK_DIR, "cores", "picorv32")
 ))
 
 

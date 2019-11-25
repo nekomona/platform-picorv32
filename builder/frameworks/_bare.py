@@ -16,11 +16,13 @@ env.Append(
         # "-mcmodel=%s" % board.get("build.mcmodel"),
         # "-fmessage-length=0",
         # "-fsigned-char",
-        # "-ffunction-sections",
-        # "-fdata-sections",
+        "--specs=nosys.specs",
+        "-ffunction-sections",
+        "-fdata-sections",
+        "-fno-unwind-tables",
         # "-fno-common",
-        "-ffreestanding",
-        "-nostdlib"
+        # "-ffreestanding",
+        # "-nostdlib"
     ],
 
     CFLAGS = [
@@ -28,7 +30,8 @@ env.Append(
     ],
 
     CXXFLAGS = [
-        "-std=gnu++17"
+        "-std=gnu++17",
+        "-fno-rtti"
     ],
 
     CPPDEFINES = [
