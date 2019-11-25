@@ -44,41 +44,6 @@ class Picorv32Platform(PlatformBase):
         if "tools" not in debug:
             debug['tools'] = {}
 
-        # Only FTDI based debug probes
-        for link in upload_protocols:
-            if link in non_debug_protocols or link in debug['tools']:
-                continue
-
-            if link in ["jlink", "gd-link", "altera-usb-blaster"]:
-                openocd_interface = link
-            elif link == "rv-link":
-                debug['tools']['rv-link'] = {
-                    "hwids": [["0x28e9", "0x018a"]],
-                    "require_debug_port": True
-                }
-            else:
-                openocd_interface = "ftdi/" + link
-
-            server_args = [
-                "-s", "$PACKAGE_DIR/share/openocd/scripts",
-                "-f", "interface/%s.cfg" % openocd_interface,
-                "-c", "transport select jtag",
-                "-f", "target/gd32vf103.cfg"
-            ]
-            server_args.append("-c")
-            if link in ["um232h"]:
-                server_args.append("adapter_khz 8000")
-            else:
-                server_args.append("adapter_khz 1000")
-
-            if link != "rv-link":
-                debug['tools'][link] = {
-                    "server": {
-                        "package": "tool-openocd-gd32v",
-                        "executable": "bin/openocd",
-                        "arguments": server_args
-                    }
-                }
 
         board.manifest['debug'] = debug
         return board
